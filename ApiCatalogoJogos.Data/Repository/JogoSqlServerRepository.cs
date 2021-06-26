@@ -64,10 +64,12 @@ namespace ApiCatalogoJogos.Data.Repository
                     Produtora = (string)sqlDataReader["Produtora"],
                     Preco = (double)sqlDataReader["Preco"]
                 });
-                await sqlConnection.CloseAsync();
-                return jogos;
+
 
             }
+
+            await sqlConnection.CloseAsync();
+            return jogos;
         }
 
         public async Task<Jogo> Obter(Guid id)
